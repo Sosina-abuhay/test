@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      Hamilton Navigation
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="stylesheet" href="index.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div id='result'></div>
+
+    <br>
+    <br>
+    <br>
+
+      <div class="container button-container">
+          <div class="row ">
+
+            <div class="col centered">
+                <div class="mybutton relevance-compatible" id="food">
+                  Food
+                </div>
+              </div>
+             <div class="col centered">
+               <div class="mybutton relevance-compatible" id="activities">
+                  Activities
+                </div>
+              </div>
+             <div class="col centered">
+               <div class="mybutton relevance-compatible" id="study">
+                  Study
+                </div>
+              </div>
+
+          </div>
+
+      </div>
+          <div class="container content-container food hidden" style="background-color: rgba(0,0,0,0)">
+              <div class="row justify-content-between">
+                  <div class="col-md-4">
+                    <div class="card ">
+                        <div class="card-body food">
+                          <h5 class="card-title">food</h5>
+
+                            <form class="initial-info first-form relevance-compatible" id="food">
+                              <h6 class="card-subtitle mb-2 text-muted">location</h6>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="loc" id="food-darkside" value="Dark Side" checked>
+                                <label class="form-check-label" for="food-darkside">
+                                    Dark side
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="loc" id="food-lightside" value="Light Side" checked>
+                                <label class="form-check-label" for="food-lightside">
+                                    Light side
+                                </label>
+                              </div>
+                              <br>
+                              <div class="form-group">
+                                <h6 class="card-subtitle mb-2 text-muted">Type of food</h6>
+
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="serviceType" id="junkfood" value="junkFood" checked>
+                                  <label class="form-check-label" for="junkfood">
+                                      Junk food
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="serviceType" id="regularfood" value="regularFood" checked>
+                                  <label class="form-check-label" for="regularfood">
+                                      Regular food
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="serviceType" id="vegiterian" value="vegiterian" checked>
+                                  <label class="form-check-label" for="vegiterian">
+                                      Vegiterian
+                                  </label>
+                                </div>
+
+                              </div>
+                                <button class="food-btn btn btn-primary" >Continue</button>
+                            </form>
+                            <form class="initial-info second-form relevance-compatible food hidden" >
+                              <h6 class="card-subtitle mb-2 text-muted">How far can you go?</h6>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="distancePref" id="Far food" value="20" checked>
+                                <label class="form-check-label" for="Far food">
+                                    Far
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="distancePref" id="I don't mind food" value="40" checked>
+                                <label class="form-check-label" for="I don't mind food">
+                                    I don't mind
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="distancePref" id="Close food" value="60" checked>
+                                <label class="form-check-label" for="Close food">
+                                    Close
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="distancePref" id="Very Close food" value="80" checked>
+                                <label class="form-check-label" for="Very Close food">
+                                    Very close
+                                </label>
+                              </div>
+                              <br>
+
+                              <div class="form-group">
+                                <h6 class="card-subtitle mb-2 text-muted">How badly do you want <span class="selected-service-type food"></span> </h6>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="servicePref" id="not badly food" value="20" checked>
+                                  <label class="form-check-label" for="not badly food">
+                                      not badly
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="servicePref" id="I don't mind food" value="40" checked>
+                                  <label class="form-check-label" for="I don't mind food">
+                                      I don't mind
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="servicePref" id="badly food" value="60" checked>
+                                  <label class="form-check-label" for="badly food">
+                                      badly
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="servicePref" id="Very badly food" value="80" checked>
+                                  <label class="form-check-label" for="Very badly food">
+                                      Very badly
+                                  </label>
+                                </div>
+
+                              </div>
+                                <button class="food-btn btn btn-primary" >suggestions</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-group food">
+
+                    </div>
+
+              </div>
+          </div>
+        </div>
+
+
+         <div class="container content-container study hidden" style="background-color: rgba(0,0,0,0)">
+             <div class="row justify-content-between">
+                 <div class="col-md-4">
+                   <div class="card ">
+                       <div class="card-body study">
+                         <h5 class="card-title">Study</h5>
+
+                           <form class="initial-info first-form relevance-compatible" id="study">
+                             <h6 class="card-subtitle mb-2 text-muted">location</h6>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="loc" id="study-darkside" value="Dark Side" checked>
+                               <label class="form-check-label" for="study-darkside">
+                                   Dark side
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="loc" id="study-lightside" value="Light Side" checked>
+                               <label class="form-check-label" for="study-lightside">
+                                   Light side
+                               </label>
+                             </div>
+                             <br>
+                             <div class="form-group">
+                               <h6 class="card-subtitle mb-2 text-muted">Type of study space</h6>
+
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="quiet" value="quiet" checked>
+                                 <label class="form-check-label" for="quiet">
+                                     quiet
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="IT" value="IT" checked>
+                                 <label class="form-check-label" for="IT">
+                                     IT
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="comfort" value="comfort" checked>
+                                 <label class="form-check-label" for="comfort">
+                                     comfort
+                                 </label>
+                               </div>
+
+                             </div>
+                               <button class="study-btn btn btn-primary" >Continue</button>
+                           </form>
+                           <form class="initial-info second-form relevance-compatible study hidden" >
+                             <h6 class="card-subtitle mb-2 text-muted">How far can you go?</h6>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Far study" value="20" checked>
+                               <label class="form-check-label" for="Far study">
+                                   Far
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="I don't mind study" value="40" checked>
+                               <label class="form-check-label" for="I don't mind study">
+                                   I don't mind
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Close study" value="60" checked>
+                               <label class="form-check-label" for="Close study">
+                                   Close
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Very Close study" value="80" checked>
+                               <label class="form-check-label" for="Very Close study">
+                                   Very close
+                               </label>
+                             </div>
+                             <br>
+
+                             <div class="form-group">
+                               <h6 class="card-subtitle mb-2 text-muted">How badly do you want <span class="selected-service-type study"></span> </h6>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="not badly study" value="20" checked>
+                                 <label class="form-check-label" for="not badly study">
+                                     not badly
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="I don't mind study" value="40" checked>
+                                 <label class="form-check-label" for="I don't mind study">
+                                     I don't mind
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="badly study" value="60" checked>
+                                 <label class="form-check-label" for="badly study">
+                                     badly
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="Very badly study" value="80" checked>
+                                 <label class="form-check-label" for="Very badly study">
+                                     Very badly
+                                 </label>
+                               </div>
+
+                             </div>
+                               <button class="study-btn btn btn-primary" >suggestions</button>
+                           </form>
+                       </div>
+                   </div>
+                 </div>
+                 <div class="col-md-8">
+                   <div class="card-group study">
+
+                   </div>
+
+             </div>
+         </div>
+         </div>
+
+
+
+         <div class="container content-container activities hidden" style="background-color: rgba(0,0,0,0)">
+             <div class="row justify-content-between">
+                 <div class="col-md-4">
+                   <div class="card ">
+                       <div class="card-body activities">
+                         <h5 class="card-title">Activities</h5>
+
+                           <form class="initial-info first-form relevance-compatible" id="activities">
+                             <h6 class="card-subtitle mb-2 text-muted">location</h6>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="loc" id="activities-darkside" value="Dark Side" checked>
+                               <label class="form-check-label" for="activities-darkside">
+                                   Dark side
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="loc" id="activities-lightside" value="Light Side" checked>
+                               <label class="form-check-label" for="activities-lightside">
+                                   Light side
+                               </label>
+                             </div>
+                             <br>
+                             <div class="form-group">
+                               <h6 class="card-subtitle mb-2 text-muted">Type of Activities</h6>
+
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="adventure" value="adventure" checked>
+                                 <label class="form-check-label" for="adventure">
+                                     Adventure
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="fitness" value="fitness" checked>
+                                 <label class="form-check-label" for="fitness">
+                                     Fitness
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="serviceType" id="fun" value="fun" checked>
+                                 <label class="form-check-label" for="fun">
+                                     fun
+                                 </label>
+                               </div>
+
+                             </div>
+                               <button class="activities-btn btn btn-primary" >Continue</button>
+                           </form>
+                           <form class="initial-info second-form relevance-compatible activities hidden" >
+                             <h6 class="card-subtitle mb-2 text-muted">How far can you go?</h6>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Far activities" value="20" checked>
+                               <label class="form-check-label" for="Far activities">
+                                   Far
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="I don't mind activities" value="40" checked>
+                               <label class="form-check-label" for="I don't mind activities">
+                                   I don't mind
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Close activities" value="60" checked>
+                               <label class="form-check-label" for="Close activities">
+                                   Close
+                               </label>
+                             </div>
+                             <div class="form-check">
+                               <input class="form-check-input" type="radio" name="distancePref" id="Very Close activities" value="80" checked>
+                               <label class="form-check-label" for="Very Close activities">
+                                   Very close
+                               </label>
+                             </div>
+                             <br>
+
+                             <div class="form-group">
+                               <h6 class="card-subtitle mb-2 text-muted">How badly do you want <span class="selected-service-type activities"></span> </h6>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="not badly activities" value="20" checked>
+                                 <label class="form-check-label" for="not badly activities">
+                                     not badly
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="I don't mind activities" value="40" checked>
+                                 <label class="form-check-label" for="I don't mind activities">
+                                     I don't mind
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="badly activities" value="60" checked>
+                                 <label class="form-check-label" for="badly activities">
+                                     badly
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="servicePref" id="Very badly activities" value="80" checked>
+                                 <label class="form-check-label" for="Very badly activities">
+                                     Very badly
+                                 </label>
+                               </div>
+
+                             </div>
+                               <button class="activities-btn btn btn-primary" >suggestions</button>
+                           </form>
+                       </div>
+                   </div>
+                 </div>
+                 <div class="col-md-8">
+                   <div class="card-group activities">
+
+                   </div>
+
+             </div>
+         </div>
+         </div>
+
+
+
+
+
+
+          <!-- <div class="test">
+values
+          </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+
+</html>
+
+
+<!--
+    list of all desinations
+    short detail of each destination
+    pictures
+    more detail: link, location
+    function to calculate relevance (distance, preference)
+    services:
+        food, health, spritual, activities, study space, student services (financial aid office,
+        registrar, student accounts, the mail center, career center), miscellaneous (lost a key,
+        report sexual misconduct, lost a hillcard)
+
+ -->

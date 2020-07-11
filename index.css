@@ -1,0 +1,50 @@
+.mybutton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 125px;
+  display:inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-align:center;
+  border-radius: 15px;
+}
+
+.centered {
+    text-align: center
+}
+
+.navbar {
+    background-color: #fff
+}
+
+.button-container, .content-container {
+    box-shadow:5px 5px 5px grey;
+    background-color: #fff;
+    padding:30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+  display: block;
+}
+
+.clicked {
+    background-color: red !important ;
+}
+
+.pic {
+  height: 100%;
+  width: 100%;
+}
+.card {
+  margin: 10px;
+  border-radius: 20px;
+}
